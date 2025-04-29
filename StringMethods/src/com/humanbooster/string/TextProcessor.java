@@ -19,14 +19,12 @@ public class TextProcessor {
     public static int countWords(String text){
         if (text == null) return 0;
         if (text.equals("")) return 0;
-        String[] words = text.replace("\\n","")
-                    .replace("\\t","")
-                    .replace("\\r","")
-                    .trim()
-                    .split("\\ ");
+        String[] words = text.trim()
+                    .split("\\s+");
         String s = "";
-        for (String w : words){s += w;}
-        System.out.println("WORD: " + s);
+        for (String w : words){
+            s += w;
+        }
         return (words.length == 1 && words[0].equals("")) ? 0 : words.length;
     }
 
@@ -94,7 +92,7 @@ public class TextProcessor {
                             .replace("\\r","")
                             .trim()
                             .toLowerCase()
-                            .split("\\ ");
+                            .split("\\s+");
         while (i < text.length()) {
             String word = words[i];
             word = word.isEmpty() ? word : Character.toUpperCase(word.charAt(0)) + word.substring(1).toLowerCase();      
