@@ -24,6 +24,9 @@ public class TextProcessor {
                     .replace("\\r","")
                     .trim()
                     .split("\\ ");
+        String s = "";
+        for (String w : words){s += w;}
+        System.out.println("WORD: " + s);
         return (words.length == 1 && words[0].equals("")) ? 0 : words.length;
     }
 

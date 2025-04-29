@@ -19,13 +19,14 @@ public class App {
             0, 0, 0,
             1, 1, 2, 7,
             1, 1, 2, 7,
-            1, 1, 1, 7,
+            1, 1, 2, 7,
             8
         };
 
         int size = 0;
         while (size < assertValuesCountWords.length){
             System.out.print((TextProcessor.countWords(tests[size]) == assertValuesCountWords[size] ? "." : "F"));
+            System.out.println(TextProcessor.countWords(tests[size]));
             size++;
         }
     }
